@@ -1,0 +1,284 @@
+/*
+Theme Name: Elessi Theme Child
+Theme URI: https://elessi.nasatheme.com/demo/
+Description: This is a child theme for Elessi Theme
+Author: NasaTheme team
+Author URI: https://nasatheme.com
+Template: elessi-theme
+Version: 1.0
+*/
+
+
+/*************** ADD YOUR CUSTOM CSS IN THIS AREA ***************/
+
+
+.section-title-main .nasa-heading-title{
+    background: -webkit-linear-gradient(#b747d7, #006ef8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 40px;
+    margin: 0;
+    border: 0;
+}
+
+.content_work {
+    text-align: center;
+    padding: 15px 0 0 0;
+}
+
+.stt__work {
+    flex-shrink: 0;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    line-height: 36px;
+    margin: 0 0 10px 0;
+    text-align: center;
+    color: #fff;
+    background-image: linear-gradient(to right top, #bc44d4, #a351e1, #855deb, #5d66f3, #006ef8);
+}
+
+.title__work {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 500;
+    color: #333;
+}
+
+.mt__work {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.why-us .section-title-main .nasa-heading-title{
+    color: #006ef8;
+    font-size: 46px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 56px;
+}
+
+body .section-button-main button{
+    width: 200px;
+    background-image: linear-gradient(to right top, #bc44d4, #a351e1, #855deb, #5d66f3, #006ef8) !important;
+    display: block;
+    border-radius: 6px;
+    min-height: initial;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 !important;
+    padding: 0;
+    font-size: 17px;
+    color: #fff !important;
+    border: 0 solid #00b5ff;
+    margin-bottom: 0px !important;
+}
+
+.why-us .wpb_text_column h3{
+    margin: 0 0 6px 0;
+    font-size: 19px;
+    line-height: 23px;
+    height: 46px;
+    overflow: hidden;
+    font-weight: bold !important;
+}
+.why-us .wpb_text_column{
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 6px 0px #ccc;
+    border-radius: 10px;
+    min-height: 295px;
+    margin: 30px 5px;
+    text-align: center;
+}
+
+.tab-main .nasa-tab a {
+    font-size: 16px;
+}
+
+.nasa-main-menu > .menu-item > .nasa-title-menu{
+    font-size: 18px !important;
+}
+
+.nasa-meta-categories,.single-posted-info,
+#comments,.nasa-blogs-relate,
+.single-post  #nasa-breadcrumb-site,
+.archive  #nasa-breadcrumb-site{
+    display: none;
+}
+
+.top-search-area form .nasa-icon-submit-page:before{
+    top: 16px;
+}
+.top-search-area form input{
+    height: 70px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.top-search-area form{
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.top-search-area{
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+}
+
+.category-docs .nasa-toggle-widget span{
+    align-items: center;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    margin-left: auto;
+    background-color: #528ffe;
+    height: 42px;
+    width: 42px;
+    font-size: 12px;
+    color: #fff;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.category-docs .nasa-toggle-widget{
+    bottom: 0;
+    height: auto;
+}
+.category-docs .nasa-toggle-widget:before,
+.category-docs .nasa-toggle-widget:after{
+    content: none !important;
+}
+.category-docs .widget-title{
+    padding: 19px 0;
+    border-right: 3px solid #0000;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    position: relative;
+    padding-left: 15px;
+}
+
+.category-docs .widget-title img{
+    width: 18px;
+    margin-right: 10px;
+}
+
+.category-docs .widget {
+    position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-right: 3px solid;
+    border-color: transparent;
+}
+
+.category-docs .widget_categories:has( > a:not(.nasa-hide)) .widget-title,
+.category-docs .category-active .widget-title{
+    background-color: rgba(90, 148, 255, .1);
+    border-color: #528fff;
+}
+
+.category-docs .nasa-open-toggle {
+    padding-top: 20px !important;
+    padding-bottom: 10px !important;
+}
+.category-docs .nasa-open-toggle .cat-item.active a {
+    color: #f76b6a;
+}
+.category-docs .nasa-open-toggle .cat-item a {
+    display: flex;
+    align-items: center;
+}
+.category-docs .nasa-open-toggle .cat-item img {
+    width: 15px;
+    margin-right: 5px;
+}
+.category-docs .nasa-open-toggle .cat-item:before{
+    content: none;
+}
+
+.docs-count{
+    align-items: center;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    margin-left: auto;
+    background-color: #528ffe;
+    height: 42px;
+    width: 42px;
+    font-size: 12px;
+    color: #fff;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.display-none {
+    display: none;
+}
+
+.breadcrumb-docs a{
+    color: #566e8b;
+}
+.breadcrumb-docs{
+    text-align: left;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #566e8b;
+    margin-bottom: 20px;
+}
+.breadcrumb-docs img{
+    width: 10px;
+    margin: 0 6px;
+}
+
+.categories-docs-content{
+    padding-top: 30px;
+}
+
+.search-results #nasa-breadcrumb-site{
+    display: none;
+}
+
+@media(max-width: 767px) {
+    .session-other-products.section-element,
+    .session-how-work.section-element,
+    .session-hot.section-element{
+        margin-top: 40px !important;
+    }
+    .session-hot .large-3{
+        width: 25%;
+    }
+
+    .session-how-work .large-3 .vc_single_image-wrapper,
+    .session-how-work .large-3 .wpb_wrapper,
+    .session-how-work .large-3 img{
+        width: 100%;
+    }
+    .session-how-work .large-3{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .why-us .section-button-main {
+        width: 100%;
+        text-align: center;
+    }
+    .why-us .section-title-main .nasa-heading-title {
+        font-size: 35px;
+        line-height: 40px;
+        margin-top: 30px;
+        text-align: center;
+    }
+}

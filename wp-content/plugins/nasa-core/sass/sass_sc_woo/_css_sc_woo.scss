@@ -1,0 +1,2065 @@
+// Simple Slide
+.nasa-slick-simple-item {
+    visibility: hidden;
+    @include inline-flex();
+    
+    &.slick-initialized {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+    }
+    
+    .slick-list {
+        .slick-track {
+            padding-bottom: 10px;
+        }
+    }
+    
+    .image-wrap {
+        padding-left: 10px;
+        padding-right: 10px;
+        
+        img {
+            -webkit-transform: scale(0.97);
+            -ms-transform: scale(0.97);
+            transform: scale(0.97);
+        }
+        
+        &:hover {
+            cursor: move;
+        }
+    }
+    
+    &[data-items="1"] {
+        .image-wrap {
+            padding-left: 0;
+            padding-right: 0;
+
+            img {
+                -webkit-transform: scale(0.7);
+                -ms-transform: scale(0.7);
+                transform: scale(0.7);
+            }
+        }
+    }
+    
+    .slick-slide {
+        opacity: 0.2;
+        
+        .image-wrap {
+            img {
+                margin: 0 auto;
+            }
+        }
+        
+        .title-wrap {
+            visibility: hidden;
+            opacity: 0;
+            
+            a {
+                display: inline-block;
+                font-weight: 800;
+                font-size: 210%;
+                padding: 20px 0 10px 0;
+                margin: 0;
+            }
+            
+            .price {
+                font-size: 160%;
+                font-weight: bold;
+                opacity: 0.7;
+                display: block;
+            }
+            
+            .nasa-bold {
+                font-weight: bold;
+            }
+        }
+        
+        .row {
+            .columns,
+            .column {
+                padding: 0;
+            }
+        }
+    }
+
+    .slick-current,
+    .slick-center {
+        opacity: 1;
+        margin-bottom: -10px;
+
+        .image-wrap {
+            img {
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+
+        .title-wrap {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.nasa-wrap-slick-slide-products {
+    .nasa-warp-slide-nav-top {
+        margin-bottom: 30px;
+    }
+
+    .nasa-title-wrap {
+        position: relative;
+        display: block;
+    }
+
+    .nasa-nav-icon-slick {
+        position: absolute;
+        top: -8px;
+        font-size: 150%;
+        opacity: 0.3;
+
+        &.nasa-nav-prev {
+            left: 5px;
+        }
+
+        &.nasa-nav-next {
+            right: 5px;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.nasa-product-simple-2 {
+    .image-wrap {
+        img {
+            width: 100%;
+        }
+    }
+    
+    .nasa-list-category {
+        font-size: 100%;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1.4;
+        margin-bottom: 5px;
+        color: #aaa;
+        
+        a {
+            letter-spacing: 2px;
+            color: inherit;
+            
+            &:hover {
+                color: #333;
+            }
+        }
+    }
+    
+    .name {
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 1.4;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    
+    .star-rating {
+        margin-bottom: 20px;
+    }
+    
+    .product-des {
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+    
+    .countdown {
+        margin-bottom: 15px;
+        padding: 0 5px;
+        @include flex();
+    }
+    
+    .nasa-sc-pdeal-countdown {
+        .countdown-amount {
+            width: 50px;
+            padding: 15px 0;
+            font-size: 110%;
+        }
+        
+        .countdown-period {
+            font-size: 85%;
+        }
+    }
+    
+    .wrap-price-btn {
+        .price {
+            line-height: 42px;
+            font-size: 150%;
+            font-weight: bold;
+        }
+    }
+    
+    .row.nasa-flex {
+        @include flex-wrap(wrap);
+    }
+}
+
+@media #{$notmobile} {
+    .nasa-product-simple-2 {
+        .slick-dots {
+            width: 50%;
+            position: absolute;
+            left: 0;
+            right: 50%;
+            bottom: 10px;
+        }
+    }
+    
+    .nasa-rtl {
+        .nasa-product-simple-2 {
+            .slick-dots {
+                right: 0;
+                left: 50%;
+            }
+        }
+    }
+}
+
+@media #{$mobile} {
+    body {
+        .nasa-slick-simple-item {
+            .nasa-product-slick-item-wrap {
+                .title-wrap {
+                    a {
+                        font-size: 140%;
+                        padding: 10px 0;
+                    }
+                    .price {
+                        font-size: 110%;
+                    }
+                }
+            }
+        }
+    }
+    
+    .nasa-product-simple-2 {
+        .slick-dots {
+            margin-top: 35px;
+            text-align: center;
+        }
+    }
+}
+
+// Product Categories
+.nasa-category-horizontal-1 {
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .header-title {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        z-index: 3;
+        color: #fff;
+        
+        @include translate-Y(-50%);
+
+        h3 {
+            color: #fff;
+            margin-top: 0;
+            line-height: 1;
+            
+            @include translate-Y(0);
+            
+            -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+            transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+        }
+
+        span {
+            font-size: $font-size;
+            font-weight: normal;
+            display: block;
+            text-transform: capitalize;
+            @include translate-Y(10px);
+            -webkit-transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+            transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+            animation-delay: 600ms;
+            -webkit-animation-delay: 600ms;
+            -moz-animation-delay: 600ms;
+        }
+    }
+
+    .product-category {
+        list-style: none;
+        position: relative;
+        padding: 0px;
+        
+        .count {
+            margin-top: 15px;
+        }
+
+        //Hover overlay
+        .hover-overlay:after {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.2);
+            content: "";
+            opacity: 0;
+            z-index: 2;
+        }
+
+        &:hover {
+            .header-title {
+                opacity: 1;
+
+                h3 {
+                    @include translate-Y(10px);
+                }
+
+                span {
+                    @include translate-Y(0);
+                }
+            }
+
+            .hover-overlay:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.nasa-category-horizontal-2 {
+    .hover-overlay {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .header-title {
+        position: absolute;
+        top: 30px;
+        left: 5px;
+        width: auto;
+        text-align: center;
+        opacity: 1;
+        z-index: 3;
+        color: #333;
+        background: #FFF;
+        font-size: 120%;
+        padding: 2px 15px;
+    }
+
+    .product-category {
+        position: relative;
+
+        &:hover {
+            .header-title {
+                top: 30px;
+
+                &:hover {
+                    color: #fff;
+                    background: $primary-color;
+                    padding: 2px 30px 2px 15px;
+                }
+            }
+
+            .hover-overlay {
+                opacity: 0.3;
+                visibility: visible;
+                background: #333;
+            }
+        }
+    }
+}
+
+.nasa-category-horizontal-3 {
+    .nasa-cat-link {
+        display: block;
+        margin: 5px;
+        padding-bottom: 30px;
+        @include radius(5px);
+
+        .nasa-cat-thumb {
+            padding: 30px 30px 0 30px;
+
+            img {
+                @include radius(5px);
+                border: 1px solid #ddd;
+            }
+        }
+
+        .header-title {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 110%;
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            @include box-shadow(0 0 6px 0 rgba(1,1,1,.3));
+
+            .nasa-cat-thumb {
+                img {
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+.nasa-category-horizontal-4 {
+    position: relative;
+    
+    .slick-list {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+
+    .product-category {
+        padding: 5px;
+    }
+
+    .nasa-cat-title {
+        font-weight: 700;
+        font-size: 110%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: #444;
+    }
+
+    .nasa-cat-thumb {
+        img {
+            width: 100%;
+            @include radius(10px);
+        }
+    }
+
+    .nasa-cat-link {
+        &:hover {
+            .nasa-cat-title {
+                color: #333;
+            }
+
+            .nasa-cat-thumb {
+                img {
+                    @include box-shadow(0 0 4px 0 rgba(1,1,1,.1));
+                }
+            }
+        }
+    }
+}
+
+.nasa-category-horizontal-5 {
+    border: 1px solid #F1F1F1;
+    
+    .product-category {
+        border-right: 1px solid #F1F1F1;
+        padding: 15px;
+        float: left;
+    }
+
+    .header-title {
+        font-weight: 700;
+    }
+    
+    .nasa-cat-link:hover {
+        text-decoration: underline;
+        color: $body-font-color;
+    }
+}
+
+.nasa-category-horizontal-6 {
+    position: relative;
+    
+    .slick-list {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .product-category {
+        padding: 0 10px;
+    }
+
+    .nasa-cat-title {
+        font-weight: 700;
+        font-size: 105%;
+        margin-top: 10px;
+        color: #444;
+    }
+
+    .nasa-cat-thumb {
+        padding-top: 5px;
+        @include radius(5px);
+        
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            @include radius(5px);
+        }
+    }
+
+    .nasa-cat-link {
+        &:hover {
+            .nasa-cat-title {
+                color: #333;
+            }
+
+            .nasa-cat-thumb {
+                img {
+                    //include 
+                    @include box-shadow(1px 1px 10px 1px rgba(0, 0, 0, 0.1));
+                }
+            }
+        }
+    }
+}
+
+// Products Deal
+.nasa-products-special-deal {
+    padding: 0;
+
+    &.nasa-products-special-deal-multi {
+        padding: 0 0 0 55px;
+        background: #FFF;
+        @include box-shadow(0 0 6px 0 rgba(1,1,1,.3));
+        @include radius(3px);
+
+        .nasa-title {
+            margin-bottom: 20px;
+        }
+
+        .nasa-nav-slick-wrap {
+            position: absolute;
+            bottom: 55px;
+            right: 20px;
+            z-index: 1;
+
+            .nasa-nav-slick-div {
+                display: inline-block;
+                font-size: 120%;
+
+                &.nasa-nav-slick-prev {
+                    &:after {
+                        content: " ";
+                        margin: 0px 18px 0 20px;
+                        height: 11px;
+                        color: #D8D8D8;
+                        display: inline-block;
+                        border-left: 1px solid #ccc;
+                        position: relative;
+                        top: 1px;
+                    }
+                }
+
+                .nasa-nav-icon-slick {
+                    color: #ccc;
+
+                    span {
+                        font-size: 180%;
+                        vertical-align: middle;
+                        position: relative;
+                        top: -2px;
+                    }
+
+                    &:hover {
+                        color: #333;
+                    }
+                }
+            }
+        }
+
+        .product-item {
+            .product-img {
+                position: relative;
+                margin: 55px 35px 55px 0px;
+            }
+        }
+    }
+
+    &.nasa-products-special-deal-simple {
+        
+        .product-special-deals {
+            text-align: center;
+        }
+        
+        .product-deal-special-price {
+            // margin-top: 20px;
+            //margin-bottom: 0;
+            font-size: 110%
+        }
+
+        .product-deal-special-title {
+            font-size: 130%;
+            font-weight: 700;
+            line-height: 110%;
+            // margin-top: 10px;
+            // margin-bottom: 0;
+            display: inline-block;
+        }
+
+        .nasa-slide-special-product-deal {
+            .nasa-nav-carousel-wrap {
+                top: -40px;
+            }
+        }
+        
+        .product-deal-special-progress {
+            // margin-top: 20px;
+            .deal-progress {
+                margin-bottom: 0;
+                height: 6px;
+            }
+        }
+        
+        .deal-stock-label .stock-sold {
+            float: none;
+        }
+
+        .countdown-section {
+            margin: 0 5px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        
+        .countdown-amount {
+            padding: 13px 0;
+            font-size: 100%;
+        }
+
+        .countdown-period {
+            font-size: 70%;
+        }
+    }
+
+    &.nasa-products-special-deal-for_time {
+        background: transparent;
+
+        .nasa-title {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin-bottom: 0;
+        }
+        
+        .nasa-title-heading {
+            font-size: 280%;
+            color: inherit;
+            margin: 5px 0;
+            font-weight: 800;
+            line-height: 68px;
+        }
+
+        .nasa-nav-carousel-wrap {
+            position: absolute;
+            right: 0;
+            top: 18px;
+            width: 80px;
+            @include flex();
+            @include justify-content(space-between);
+
+            .nasa-nav-icon-slider {
+                display: block;
+                font-size: 100%;
+                color: inherit;
+                width: 35px;
+                @include radius(50%);
+                
+                &:hover {
+                    background: #f1f1f1;
+                    color: #333;
+                }
+            }
+        }
+
+        .nasa-desc {
+            font-size: 130%;
+        }
+
+        .nasa-deal-for-time {
+            margin: 30px 0 20px 0;
+        }
+
+        &.text-color-white {
+            color: #ddd;
+
+            .product-item {
+                .countdown-amount {
+                    background-color: #000;
+                    border: 1px solid transparent;
+                }
+                
+                .countdown-period {
+                    color: #000;
+                }
+
+                .info .name,
+                .info .price,
+                .info .price * {
+                    color: inherit !important;
+                }
+            }
+        }
+    }
+    
+    &.nasa-products-special-deal-for_time-2 {
+        .product-deal-special-title {
+            margin: 0 auto;
+            font-size: 110%;
+            line-height: 110%;
+        }
+        
+        .product-deal-special-price {
+            font-size: 15px;
+        }
+        
+        .nasa-sc-pdeal-countdown.for-time-2 {
+            color: #fff;
+            padding: 0 20px;
+            height: 33px;
+            @include radius(3px);
+            
+            .countdown {
+                margin-left: 10px;
+                min-width: 110px;
+                height: 33px;
+                @include flex();
+                @include align-items(center);
+            }
+            
+            .countdown-row {
+                margin-left: 0;
+                margin-right: 0;
+                @include flex();
+                @include align-items(baseline);
+            }
+            
+            .countdown-section {
+                @include flex();
+                @include align-items(baseline);
+                position: relative;
+                margin: 0;
+                
+                &:after {
+                    content: ":";
+                    margin: 0 10px;
+                    color: inherit;
+                }
+                
+                &:last-child {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+            
+            .countdown-period {
+                display: none;
+            }
+            
+            .countdown-amount {
+                font-size: 100%;
+                background: transparent;
+                padding: 0;
+                width: auto;
+                color: inherit;
+            }
+        }
+        
+        .product-deal-special-progress .deal-progress {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    
+    &.nasa-products-special-deal-multi-2 {
+        
+        .nasa-flex-wrap {
+            @include flex();
+            @include flex-direction(row);
+        }
+        
+        .nasa-main-wrap {
+            width: 75%;
+        }
+        
+        .nasa-extra-wrap {
+            width: 25%;
+        }
+        
+        .main-border-wrap {
+            @include flex();
+            @include flex-direction(row);
+            height: 100%;
+            padding-top: 2px;
+        }
+        
+        .extra-border-wrap {
+            @include flex();
+            @include flex-direction(row);
+            height: 100%;
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+        
+        .nasa-main-special {
+            position: relative;
+            padding: 0 20px 25px 20px;
+            margin-bottom: 20px;
+            border: 1px solid $primary-color;
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            @include radius(5px);
+        }
+
+        .nasa-main-top {
+            padding: 0 10px;
+        }
+
+        .nasa-special-deal-item {
+            padding: 0 10px;
+            outline: none;
+        }
+        
+        .nasa-sc-title {
+            display: block;
+            font-size: 180%;
+            margin-top: 18px;
+        }
+
+        .nasa-nav-slick-wrap {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 100%;
+
+            .nasa-nav-icon-slick {
+                color: #aaa;
+
+                .nasa-icon {
+                    font-size: 150%;
+                    position: relative;
+                    top: 5px;
+                }
+
+                &.nasa-nav-prev {
+                    &:after {
+                        content: "";
+                        display: inline-block;
+                        width: 1px;
+                        height: 10px;
+                        border-left: 1px solid #aaa;
+                        margin: 0 30px 0 35px;
+                    }
+                }
+
+                &:hover {
+                    color: #333;
+                }
+            }
+        }
+
+        .product-deal-special-wrap-info {
+            padding-left: 10px;
+        }
+
+        .nasa-list-category {
+            font-size: 100%;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #aaa;
+
+            a {
+                color: inherit;
+                font-weight: 600;
+
+                &:hover {
+                    color: #333;
+                }
+            }
+        }
+        
+        .product-deal-special-title {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 160%;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .star-rating {
+            margin-bottom: 12px;
+        }
+        
+        .product-deal-special-price {
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #FF3300;
+            font-size: 150%;
+            
+            del {
+                margin-right: 10px;
+                font-weight: 700;
+            }
+        }
+        
+        .nasa-list-stock-status {
+            display: none;
+            
+            span {
+                color: $primary-color;
+            }
+        }
+        
+        .product-deal-special-countdown {
+            margin-bottom: 15px;
+        }
+        
+        .countdown-amount {
+            width: 46px;
+            padding: 13px 0;
+            background: #f1f1f1;
+            color: #000;
+            font-size: 130%;
+            font-weight: 700;
+            border: none;
+        }
+
+        .product-deal-special-progress .deal-progress {
+            margin-bottom: 25px;
+        }
+    }
+
+    .nasa-title {
+        margin: 0;
+    }
+
+    .product-item {
+        margin: 0 1px;
+
+        .product-img {
+            padding: 0;
+        }
+    }
+
+    .product-deal-special-title {
+        font-size: 130%;
+        font-weight: 400;
+        line-height: 130%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .product-deal-special-price {
+        display: block;
+        width: 100%;
+        font-size: 135%;
+        margin-bottom: 30px;
+    }
+
+    .product-deal-special-buttons {
+        .add-to-cart-grid {
+            // padding: 8px 30px;
+
+            .cart-icon {
+                margin-right: 8px;
+                display: none;
+            }
+
+            .add_to_cart_text {
+                position: relative;
+                line-height: 1;
+            }
+
+            &.loading {
+                .add_to_cart_text {
+                    color: transparent !important;
+                }
+            }
+        }
+    }
+
+    .nasa-special-deal-style-multi {
+
+        .product-deal-special-wrap-info {
+            padding: 50px 20px 20px 0;
+        }
+
+        .product-special-deals {
+
+            .product-deal-special-title {
+                font-size: 190%;
+                font-weight: 800;
+                margin-top: 0;
+            }
+
+            .product-deal-special-price {
+                display: block;
+                width: 100%;
+                font-size: 150%;
+                margin-bottom: 25px;
+                
+                .price {
+                    font-weight: 500;
+
+                    del {
+                        font-size: 85%;
+                        font-weight: normal;
+                        margin-left: 10px;
+                    }
+                    
+                    ins {
+                        float:  left;
+                    }
+                }
+            }
+
+            .star-rating {
+                display: none;
+                margin-bottom: 0px;
+            }
+
+            .nasa-product-deal-des {
+                height: 100px;
+                overflow-y: auto;
+                
+                ul, ol {
+                    padding-left: 20px;
+                }
+            }
+
+            .badge {
+                top: 55px;
+
+                &.hot-label {
+                    top: 90px;
+                }
+            }
+
+            .nasa-gift-featured-wrap {
+                position: absolute;
+                right: -40px;
+                top: 20px;
+                bottom: auto;
+                text-align: center;
+            }
+
+            .product-deal-special-progress {
+                margin: 25px 0 0 0;
+            }
+
+            .product-deal-special-countdown {
+                .countdown-amount {
+                    width: 50px;
+                    font-size: 120%;
+                    padding: 15px 0;
+                }
+            }
+
+            .product-deal-special-buttons {
+                margin-top: 15px;
+            }
+        }
+        
+    }
+}
+
+.nasa-special-deal-style-multi-wrap {
+    padding: 0;
+    @include radius(5px);
+
+    .slick-arrow {
+        display: none !important;
+    }
+    
+    .nasa-product-grid {
+        .add-to-cart-grid {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            right: auto;
+            bottom: auto;
+
+            @include translate-X(0);
+
+            @include radius(0);
+            
+            .add_to_cart_text,
+            &:hover .add_to_cart_text {
+                width: auto;
+                padding: 0;
+            }
+        }
+        
+        .add_to_cart_text {
+            visibility: visible;
+            width: 100%;
+            max-width: 100%;
+            padding: 1em 4em;
+            line-height: 1.2;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin: 0;
+            left: 0;
+            right: 0;
+            color: #fff;
+            @include radius(unset);
+        }
+
+        .btn-wishlist,
+        .quick-view,
+        .btn-compare {
+            display: none;
+        }
+    }
+
+    .product-deal-special-buttons {
+        .nasa-product-grid {
+            position: unset;
+            width: initial;
+            height: initial;
+
+            .add-to-cart-grid {
+                width: initial;
+                height: 42px;
+                padding: 0 40px;
+                
+                @include inline-flex();
+                
+                .add_to_cart_text {
+                    background-color: transparent !important;
+                    border-color: transparent !important;
+                }
+            }
+        }
+    }
+}
+
+.nasa-slider-deal-vertical-extra-switcher {
+    overflow: hidden;
+    padding: 55px 55px 40px 65px;
+
+    .badge {
+
+        &.sale-label {
+            height: auto;
+            width: auto;
+            padding: 8.5px 10px;
+            left: 10px;
+            top: 1px;
+            line-height: 15px;
+
+            .sale-label-text {
+                display: block;
+            }
+        }
+
+        &.hot-label {
+            top: 65px;
+        }
+    }
+
+    .item-slick {
+        cursor: pointer;
+        opacity: 0.7;
+        margin: 0;
+        border-top: 1px solid transparent;
+
+        &.slick-current,
+        &:hover {
+            opacity: 1;
+            
+            .nasa-slick-img {
+                img {
+                    border-color: #a7a7a7; 
+                }
+            }
+        }
+    }
+
+    .nasa-border-img {
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+            padding-bottom: 15px;
+        }
+    }
+    
+    .nasa-slick-img {
+        text-align: center;
+        width: 33%;
+        padding-left: 1px;
+        padding-right: 1px;
+
+        img {
+            height: auto;
+            width: 100%;
+            display: inline-block;
+            border: 1px solid transparent;
+        }
+    }
+
+    .nasa-slick-info {
+        width: 67%;
+    }
+
+    .nasa-gift-featured-wrap {
+        display: none;
+    }
+    
+    &.nasa-nav-4-items {
+        padding: 0;
+        // margin-top: -22px;
+
+        .slick-list {
+            padding-left: 6px;
+        }
+
+        .item-deal-thumb {
+            padding: 10px;
+            margin: 0;
+            border: 1px solid #a7a7a7;
+            position: relative;
+            @include radius(5px);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:before {
+                right: 100%;
+                top: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                visibility: hidden;
+            }
+
+            .nasa-slick-img {
+                img {
+                    border-color: transparent; 
+                }
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+
+        .slick-slide {
+            padding: 0 1px 20px 1px;
+
+            &.slick-current,
+            &:hover {
+                .item-deal-thumb {
+                    border-color: $primary-color;
+
+                    &:before {
+                        border-color: transparent;
+                        border-right-color: inherit;
+                        border-width: 7px;
+                        margin-top: -7px;
+                        visibility: visible;
+                    }
+                }
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+        
+        .nasa-product-price,
+        .nasa-product-title {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .nasa-product-title {
+            line-height: 1.2;
+            font-size: 115%;
+        }
+        
+        .nasa-product-price.price {
+            color: #FF3300;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nasa-products-special-deal.nasa-products-special-deal-simple .countdown-section {
+        margin: 0 2px;
+    }
+    
+    .nasa-products-special-deal.nasa-products-special-deal-simple .countdown-section:first-child {
+        margin-left: 0;
+    }
+    
+    .nasa-products-special-deal.nasa-products-special-deal-simple .countdown-section:last-child {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 389px) {
+    .nasa-products-special-deal.nasa-products-special-deal-simple .countdown-amount {
+        width: 35px;
+        font-size: 90%;
+    }
+}
+
+@media #{$tablet} {
+    .nasa-extra-nav-2-items .nasa-slider-deal-vertical-extra-switcher {
+        padding: 55px 55px 40px 20px;
+    }
+    
+    .nasa-rtl {
+        .nasa-extra-nav-2-items .nasa-slider-deal-vertical-extra-switcher {
+            padding: 55px 20px 40px 55px;
+        }
+    }
+}
+
+.left {
+    .nasa-slider-deal-vertical-extra-switcher {
+
+        .item-slick {
+            cursor: pointer;
+            margin-left: 0;
+            margin-right: 10px;
+
+            &:after,
+            &:before {
+                left: 100%;
+                right: auto;
+            }
+
+            &.slick-current,
+            &:hover {
+                border-color: #999999;
+
+                &:after {
+                    border-color: rgba(153, 153, 153, 0);
+                    border-right-color: none;
+                    border-left-color: #999999;
+                    border-width: 4px;
+                    margin-top: -4px;
+                    visibility: visible;
+                }
+
+                &:before {
+                    border-color: rgba(153, 153, 153, 0);
+                    border-right-color: none;
+                    border-left-color: #999999;
+                    border-width: 8px;
+                    margin-top: -8px;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+.nasa-deal-for-time {
+    .nasa-sc-pdeal-countdown {
+        margin: 0;
+        display: inline-block;
+
+        .countdown-row {
+            margin: 0 -7px;
+            width: auto;
+        }
+        
+        .countdown-section {
+            padding: 0;
+            margin: 0 7px;
+        }
+        
+        .countdown-amount {
+            font-size: 120%;
+            padding: 15px 0;
+            width: 55px;
+        }
+
+        .countdown-period {
+            display: block;
+            line-height: 120%;
+            font-size: 80%;
+        }
+    }
+}
+
+.nasa-product-deal {
+    .price {
+        font-size: 115%;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+    .name {
+        line-height: 1.2;
+        font-size: 140%;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .product-deal-countdown {
+        padding: 10px 0;
+    }
+    
+    .countdown-amount {
+        background: #efefef;
+        color: #333;
+        font-weight: bold;
+        border: 1px solid #efefef;
+        padding: 12px 0;
+        font-size: 120%;
+        line-height: 120%;
+        width: 46px;
+    }
+}
+
+@media #{$mobile} {
+    .nasa-products-special-deal {
+        margin-bottom: 20px;
+        border: none;
+        min-height: auto !important;
+        
+        &.nasa-products-special-deal-multi {
+            border: none;
+            
+            .nasa-main-special {
+                padding-bottom: 70px;
+            }
+            
+            .nasa-nav-slick-wrap {
+                text-align: center;
+                width: 100%;
+                left: 0;
+                bottom: 25px;
+
+                .nasa-nav-slick-div {
+                    font-size: 110%;
+                }
+            }
+            
+            .product-item {
+                border: none;
+                padding-top: 15px; 
+            }
+            
+            .nasa-special-deal-style-multi-wrap {
+                padding: 0;
+            }
+            
+            .nasa-special-deal-style-multi {
+                .product-special-deals {
+                    .product-deal-special-buttons {
+                        .add-to-cart-grid {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+        
+        &.nasa-products-special-deal-for_time .nasa-title-heading {
+            font-size: 30px;
+            line-height: 70px;
+        }
+        
+        .product-item {
+            padding-top: 0px;
+        }
+    }
+    
+    .nasa-special-deal-style-multi-wrap {
+        .product-deal-special-buttons {
+            height: 60px;
+        }
+    }
+    
+    .nasa-slide-style-product-deal {
+        .nasa-nav-carousel-wrap {
+            &.nasa-nav-carousel-wrap-deal {
+                top: -20px;
+                width: 100%;
+                z-index: 15;
+            }
+        }
+    }
+    
+    .nasa-products-special-deal.nasa-products-special-deal-multi-2 .nasa-main-wrap {
+        width: 100%;
+    }
+    
+    body {
+        .nasa-products-special-deal {
+            &.nasa-products-special-deal-multi {
+                padding: 0 30px;
+
+                .product-item .product-img {
+                    margin: 25px 0px
+                }
+            }
+            
+            .nasa-special-deal-style-multi {
+                .product-deal-special-wrap-info {
+                    padding: 0px 0px 20px 0;
+                }
+            }
+            
+            &.nasa-products-special-deal-multi-2 {
+                .product-deal-special-wrap-info {
+                    padding-left: 0;
+                }
+                
+                .nasa-nav-slick-wrap .nasa-nav-icon-slick.nasa-nav-prev:after {
+                    margin: 0 5px;
+                }
+            }
+        }
+        
+        .product-item {
+            .product-special-deals .nasa-product-grid .add-to-cart-grid .add_to_cart_text {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-width: 379px) {
+    body {
+        .nasa-products-special-deal {
+            &.nasa-products-special-deal-multi,
+            &.nasa-products-special-deal-multi-2 {
+                .countdown-row {
+                    margin: 0 -5px;
+                }
+                
+                .countdown-section {
+                    margin: 0 5px;
+                }
+                
+                .countdown-amount {
+                    width: 40px !important;
+                    padding: 12px 0;
+                    font-size: 100% !important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    body .nasa-products-special-deal.nasa-products-special-deal-multi .nasa-nav-slick-wrap .nasa-nav-slick-div {
+        font-size: 100%;
+    }
+}
+
+// Categories - Grid
+.grid-product-category {
+    .nasa-item-wrap {
+        border: 1px solid #eee;
+        background: #fff;
+        padding: 20px;
+        overflow: hidden;
+        
+        @include radius(5px);
+
+        &:hover {
+            border-color: #aaa;
+            
+            .nasa-view-more i {
+                color: $primary-color;
+            }
+        }
+    }
+    
+    .nasa-cat-info {
+        width: 70%;
+        display: inline-block;
+    }
+    
+    .nasa-title {
+        font-size: 120%;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    
+    .count {
+        color: #aaa;
+        font-size: 90%;
+    }
+    
+    .nasa-view-more {
+        font-weight: 400;
+        margin-top: 10px;
+
+        i {
+            font-size: 130%;
+            position: relative;
+            top: 2px;
+            color: #ccc;
+        }
+
+        &:hover {
+            color: #000;
+        }
+    }
+    
+    .nasa-cat-thumb {
+        width: 30%;
+        display: inline-block;
+        
+        img {
+            width: 100%;
+        }
+    }
+
+    .nasa-child-categories {
+        list-style: none;
+        padding: 0;
+    }
+
+    .nasa-child-category-item {
+        color: #666;
+
+        &:hover {
+            color: #000;
+        }
+    }
+    
+    &.ns-st-grd2 {
+        .nasa-item-wrap {
+            border-color: #f1f1f1;
+            padding: 10px;
+            
+            &:hover {
+                border-color: #aaa;
+            }
+        }
+        
+        .cat-title {
+            color: #333;
+        }
+    }
+}
+
+.nasa-category-slider-vertical {
+    .product-category {
+        margin-top: 5px;
+        margin-bottom: 15px;
+        position: relative;
+
+        .header-title {
+            position: absolute;
+            top: 15px;
+            right: 2px;
+
+            h3 {
+                background: #FFF;
+                font-size: 110%;
+                padding: 5px 10px;
+            }
+
+            .count {
+                display: none;
+            }
+        }
+
+        &:hover {
+            .header-title {
+                h3:hover {
+                    background: $primary-color;
+                    color: #FFF;
+                    padding: 5px 10px 5px 20px;
+                }
+            }
+        }
+    }
+}
+
+.nasa-category-horizontal-3,
+.nasa-category-horizontal-4 {
+    .nasa-nav-arrow {
+        margin-top: -15px;
+    }
+}
+
+.nasa-category-horizontal-6 {
+    .nasa-nav-arrow {
+       margin-top: -15px;
+    }
+}
+
+.nasa-wrap-categories {
+    .child-items-wrap {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    
+    .cat-child-item {
+        padding: 0 10px;
+    }
+}
+
+.cat-child-item {
+    position: relative;
+    margin-bottom: 12px;
+
+    a {
+        text-decoration: none;
+        margin: 0;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    &:before {
+        font-family: FontAwesome;
+        content: "\f105";
+        font-size: 14px;
+        margin-right: 10px;
+    }
+}
+
+.items-r50 {
+    .nasa-cat-thumb {
+        img {
+            @include radius(50%);
+        }
+    }
+}
+
+.items-padding-20px {
+    .nasa-slick-slider {
+        .nasa-slider-item {
+            padding: 20px;
+        }
+    }
+}
+
+.ns-baner_btn_zoom:hover {
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+}
+
+.bg-item-white{
+    padding: 10px;
+    img {
+        background-color: #fff;
+    }
+
+    &:hover {
+        img {
+            @include box-shadow( 1px 1px 10px 1px rgba(0, 0, 0, 0.1));
+           
+        }
+       
+    }
+}
+
+.brand-item-white {
+    background-color: #f1f1f1;
+    .brands-item {
+        padding: 10px;
+        &:hover {
+            img {
+                opacity: 1;
+                @include box-shadow( 1px 1px 10px 1px rgba(0, 0, 0, 0.1));
+            }
+           
+        }
+    }
+}
+
+.bg_f1f1f1{
+    background-color: #f1f1f1;
+}
+
+.nasa-rtl {
+    .cat-child-item {
+        &:before {
+            content: "\f104";
+            margin-right: 0;
+            margin-left: 10px;
+        }
+    }
+}
+
+/**
+ * Bulk Discount
+ */
+.dsc-label {
+    @include flex();
+    @include align-items(center);
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #333;
+}
+
+.dsc-flex-row {
+    @include flex();
+    @include flex-direction(row);
+    @include align-items(center);
+    @include flex-wrap(wrap);
+    margin-bottom: 30px;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.dsc-flex-column {
+    min-width: 33.3333%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+    &.first {
+        width: 90px;
+        flex-grow: 1;
+    }
+    
+    .ev-dsc-qty {
+        padding: 5px;
+        margin: 0 5px;
+        display: block;
+        text-align: center;
+        font-weight: 400;
+        line-height: 1.4;
+        color: #333;
+        border: 1px solid #e1e1e1;
+
+        @include radius(4px);
+
+        &:hover,
+        &.actived {
+            color: #333;
+            border-color: #00a32a;
+            background: #fafffa;
+        }
+        
+        .amount {
+            font-weight: bold;
+        }
+    }
+}
+
+.info-modern-1 {
+    .dsc-flex-row {
+        @include justify-content(center);
+    }
+    
+    // .dsc-flex-column {
+    //     width: 50%;
+    // }
+}
+
+@media screen and (max-width: 420px) {
+    .dsc-flex-column {
+        .ev-dsc-qty {
+            font-size: 12px;
+        }
+    }
+}
+
+.bulk-price {
+    @include flex();
+    @include flex-wrap(wrap);
+    @include align-items(baseline);
+}
+
+.bulk-after-price {
+    font-size: 14.5px;
+    font-weight: normal;
+}
+
+.bulk-desc {
+    margin-top: 5px;
+    
+    @include flex();
+    @include align-items(baseline);
+    
+    &:before {
+        content: "";
+        width: 1px;
+        height: 12px;
+        margin: 0 10px 0 5px;
+        border-left: 1px solid #efefef;
+        
+        @include flex();
+    }
+}
+
+.nasa-layout-full {
+    .text-center {
+        .bulk-desc,
+        .dsc-label,
+        .bulk-price {
+            @include justify-content(center);
+        }
+        
+        .dsc-flex-row {
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+            max-width: 600px;
+        }
+    }
+}
+
+.nasa-rtl {
+    .bulk-desc:before {
+        margin: 0 5px 0 10px;
+    }
+}
+
+.save-note {
+    color: #777;
+    font-size: 14.5px;
+    font-weight: 400;
+    @include flex();
+    @include align-items(center);
+
+    .amount {
+        color: #333;
+        font-weight: bold;
+    }
+    
+    i {
+        color: #f76b6a;
+        font-style: normal;
+        font-weight: bold;
+    }
+}
+
+.price del.old-price-note {
+    color: #777;
+    font-size: 14.5px;
+
+    .amount {
+        font-size: 100%;
+        color: inherit;
+        font-weight: normal;
+    }
+}
+
+@media #{$notmobile} {
+    .nasa-products-special-deal.nasa-products-special-deal-simple .nasa-nav-top-right > .nasa-nav-arrow {
+        top: -32px;
+    }
+}
+
+/* Brands Anphabet */
+.nasa-anphabets {
+    border: 1px solid #ececec;
+}
+
+.anphabet-item {
+    margin: 0 10px;
+    height: 36px;
+    line-height: 36px;
+    color: #aaa;
+    font-size: 110%;
+    
+    &:focus {
+        color: #aaa;
+    }
+    
+    &:hover {
+        color: #666;
+    }
+    
+    &.active {
+        color: #000;
+    }
+}
+
+.nasa-brands-anphabets {
+    .nasa-brands-list {
+        padding: 30px 0;
+    }
+    
+    .brand-item {
+        width: 20%;
+        height: 36px;
+        line-height: 36px;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    &:not(.filtering) {
+        .nasa-invisible {
+            display: none;
+        }
+    }
+    
+    .count {
+        &:before {
+            content: "(";
+        }
+        
+        &:after {
+            content: ")";
+        }
+    }
+}
+
+@media only screen and (min-width:#{$notmobile-screen}) and (max-width:#{$medium-screen}) {
+    .nasa-brands-anphabets {
+        .brand-item {
+            width: 25%;
+        }
+    }
+}
+
+@media only screen and (max-width:#{$notmobile-screen}) {
+    .nasa-brands-anphabets {
+        .brand-item {
+            width: 33.3333%;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .nasa-brands-anphabets {
+        .brand-item {
+            width: 50%;
+        }
+    }
+}

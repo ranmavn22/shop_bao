@@ -1,0 +1,249 @@
+@charset "UTF-8";
+
+$em-base: 14.5px !default;
+@function emCalc($pxWidth) {
+    @return $pxWidth / $em-base * 1em;
+}
+
+$default-float: left;
+
+$body-bg: #fff;
+$body-font-color: #555;
+$body-color-bold: #212121;
+$body-font-family: "Open Sans", Helvetica, Arial, sans-serif !default;
+$body-font-weight: normal;
+$body-font-style: normal;
+$font-size: 100%;
+$font-smoothing: antialiased;
+$font-pe7-icon: 130%;
+$paragraph-line-height: 1.6 !default;
+$form-label-font-size: emCalc(14.5px) !default;
+
+$primary-color: #f76b6a;
+$secondary-color: #f46e6d;
+$alert-color: #C60F13;
+$success-color: #00a32a;
+
+$color-button: #fff;
+$color-hover: darken($primary-color, 15%);
+$button-border-color: #aaa;
+$button-border-color-hover: $color-hover;
+$button-text-color-cus: #444;
+$button-text-color-hover: #FFF;
+$button-font-weight: bold;
+
+$border: #ececec;
+$border-light: #EEE;
+$gray: #555;
+
+// Button font
+$button-font-med: emCalc(12px) !default;
+$button-font-tny: emCalc(10px) !default;
+$button-font-sml: emCalc(11px) !default;
+$button-font-lrg: emCalc(16px) !default;
+
+//Button size
+$button-med: emCalc(16px) !default;
+$button-tny: emCalc(8px) !default;
+$button-sml: emCalc(12px) !default;
+$button-lrg: emCalc(18px) !default;
+
+//Button style
+$button-font-transform: capitalize !default;
+
+//Table font
+$table-head-font-size: emCalc(14.5px) !default;
+$table-row-font-size: emCalc(15.5px) !default;
+$table-line-height: emCalc(18px) !default;
+
+//Input custom
+$input-padding-left: 10px;
+$base-search-height: 44px;
+$input-font-size: emCalc(14.5px) !default;
+$input-border-color: #ccc !default;
+
+
+// Link color
+$anchor-font-color: #333 !default;
+$anchor-font-color-hover: $color-hover !default;
+
+$list-style-position: inside !default;
+
+$global-radius: 5px !default;
+$global-rounded: 1000px !default;
+$button-radius: 5px !default;
+
+$row-width: emCalc(1200px) !default;
+$box-width: emCalc(1200px) !default;
+$column-gutter: emCalc(20px) !default;
+
+$header-font-family: "Open Sans", Helvetica, Arial, sans-serif !default;
+$header-font-weight: normal !default;
+$header-font-style: normal !default;
+$header-font-color: #333 !default;
+$header-line-height: 1.4 !default;
+$header-top-margin: 0.2em !default;
+$header-bottom-margin: 0.5em !default;
+$header-text-rendering: optimizeLegibility !default;
+
+$h1-font-size: emCalc(28px) !default;
+$h2-font-size: emCalc(26px) !default;
+$h3-font-size: emCalc(24px) !default;
+$h4-font-size: emCalc(20px) !default;
+$h5-font-size: emCalc(17px) !default;
+$h6-font-size: 1em !default;
+
+$mobile-screen: 767px !default;
+$small-screen: 767px !default;
+$notmobile-screen: 768px !default;
+$medium-screen: 1024px !default;
+$large-screen: 1440px !default;
+
+$screen: "only screen" !default;
+$mobile: "only screen and (max-width:#{$mobile-screen})" !default;
+$notmobile: "only screen and (min-width:#{$notmobile-screen})" !default;
+$small: "only screen and (min-width:#{$notmobile-screen})" !default;
+$medium: "only screen and (min-width:#{$medium-screen})" !default;
+$large: "only screen and (min-width:#{$large-screen})" !default;
+$landscape: "only screen and (orientation: landscape)" !default;
+$portrait: "only screen and (orientation: portrait)" !default;
+
+@mixin radius($radius: $global-radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin single-transition($property: all, $speed: 200ms, $ease: ease) {
+    -webkit-transition: $property $speed $ease;
+    -moz-transition: $property $speed $ease;
+    -o-transition: $property $speed $ease;
+    transition: $property $speed $ease;
+}
+
+@mixin box-shadow($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}
+
+@mixin rotate($value: 0deg) {
+    -webkit-transform: rotate($value);
+    -moz-transform: rotate($value);
+    -o-transform: rotate($value);
+    -ms-transform: rotate($value);
+    transform: rotate($value);
+}
+
+// We use this to add transform translateX to elements
+@mixin translate-X($value: 0px) {
+    -webkit-transform: translateX($value);
+    -moz-transform: translateX($value);
+    -o-transform: translateX($value);
+    -ms-transform: translateX($value);
+    transform: translateX($value);
+}
+
+// We use this to add transform translateY to elements
+@mixin translate-Y($value: 0px) {
+    -webkit-transform: translateY($value);
+    -moz-transform: translateY($value);
+    -o-transform: translateY($value);
+    -ms-transform: translateY($value);
+    transform: translateY($value);
+}
+
+// We use this to add transform translate to elements
+@mixin translate($value_x: 0px, $value_y: 0px) {
+    -webkit-transform: translate($value_x, $value_y);
+    -moz-transform: translate($value_x, $value_y);
+    -o-transform: translate($value_x, $value_y);
+    -ms-transform: translate($value_x, $value_y);
+    transform: translate($value_x, $value_y);
+}
+
+@mixin flex() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin inline-flex() {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+@mixin flex-direction($value) {
+    @if $value == column {
+        -webkit-box-orient: vertical;
+    }
+    @else if $value == row {
+        -webkit-box-orient: horizontal;
+    }
+    
+    -webkit-box-direction: normal;
+    -ms-flex-direction: $value;
+    flex-direction: $value;
+}
+
+@mixin flex-wrap($value) {
+    -webkit-flex-wrap: $value;
+    -ms-flex-wrap: $value;
+    flex-wrap: $value;
+}
+
+@mixin align-items($value) {
+    @if $value == flex-start {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+    }
+    @else if $value == flex-end {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+    }
+    @else {
+        -webkit-box-align: $value;
+        -ms-flex-align: $value;
+    }
+    
+    -webkit-align-items: $value;
+    align-items: $value;
+}
+
+@mixin justify-content($value) {
+    @if $value == flex-end {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+    }
+    @else if $value == flex-start {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+    }
+    @else if $value == space-between {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    }
+    @else if $value == space-around {
+        -ms-flex-pack: distribute;
+    }
+    @else {
+        -webkit-box-pack: $value;
+        -ms-flex-pack: $value;
+    }
+    
+    justify-content: $value;
+}
+
+@mixin order-flex($order) {
+    -webkit-box-ordinal-group: $order;
+    -moz-box-ordinal-group: $order;
+    -ms-flex-order: $order; 
+    -webkit-order: $order;
+    order: $order;
+}
+
+@import "css_portfolio";
