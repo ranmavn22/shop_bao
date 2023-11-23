@@ -247,7 +247,13 @@ body .section-button-main button{
     padding-top: 30px;
 }
 
+.blog  #nasa-breadcrumb-site,
 .search-results #nasa-breadcrumb-site{
+    display: none;
+}
+
+.nasa-icon-mini-cart,
+.safe-checkout{
     display: none;
 }
 
