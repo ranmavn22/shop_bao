@@ -257,6 +257,31 @@ body .section-button-main button{
     display: none;
 }
 
+.download-mockup-btn{
+    padding: 0 10px;
+    max-width: 300px;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    background-color: #f76b6a;
+    border-color: #f76b6a;
+    color: #FFF;
+    border-radius: 5px;
+    margin: 10px 3px;
+    width: auto;
+}
+
+.sku_wrapper{
+    margin-bottom: 14px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nasa-label-round .nasa-attr-ux-label{
+    border-radius: 5px;
+}
+
 @media(max-width: 767px) {
     .session-other-products.section-element,
     .session-how-work.section-element,

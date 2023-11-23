@@ -42,4 +42,5 @@ global $nasa_opt, $product;
 
     do_action('woocommerce_after_add_to_cart_button');
     ?>
+    <a class="download-mockup-btn button alt" href="" target="_blank">Download mockup & template design</a>
 </div>
